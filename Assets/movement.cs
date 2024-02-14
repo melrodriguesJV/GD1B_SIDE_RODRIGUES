@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    [SerializeField]
-    private KeyCode leftKey = KeyCode.LeftArrow, rightKey = KeyCode.RightArrow;
+    [SerializeField] private float speed;
+    [SerializeField] private float jump_force;
 
     [SerializeField]
     private Rigidbody2D rgbd;
+
+    private bool grounded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +21,19 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(leftKey))
+        rgbd.velocity = new Vector2(Input.GetAxis("Horizontal")*speed, rgbd.velocity.y);
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            rgbd.AddForce(Vector2.left);
+            rgbd.velocity = new Vector2(rgbd.velocity.x, jump_force);
+            grounded = false;
         }
-        if (Input.GetKey(rightKey))
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "ground")
         {
-            rgbd.AddForce(Vector2.right);
+            grounded = true;
         }
     }
 }
