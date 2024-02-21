@@ -7724,8 +7724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8a3197245ffe044ad6227719b5ab9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   player: {fileID: 2011566132}
+  aheadDistance: 5
+  cameraSpeed: 10
 --- !u!1001 &815082477614183199
 PrefabInstance:
   m_ObjectHideFlags: 0
