@@ -22,6 +22,7 @@ public class movement : MonoBehaviour
     void Update()
     {
         rgbd.velocity = new Vector2(Input.GetAxis("Horizontal")*speed, rgbd.velocity.y);
+        gameObject.GetComponent<Animator>().Play("walk");
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rgbd.velocity = new Vector2(rgbd.velocity.x, jump_force);
