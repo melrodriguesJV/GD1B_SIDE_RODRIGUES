@@ -33,14 +33,20 @@ public class movement : MonoBehaviour
             transform.localScale = new Vector3(-1,1,1);
 
         GetComponent<Animator>().SetBool("walk", horizontalInput != 0);
+        GetComponent<Animator>().SetBool("grounded", grounded);
         
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            rgbd.velocity = new Vector2(rgbd.velocity.x, jump_force);
-            grounded = false;
+            Jump();
         }
     }
 
+    private void Jump() 
+    {
+        rgbd.velocity = new Vector2(rgbd.velocity.x, jump_force);
+        GetComponent<Animator>().SetTrigger("jump");
+        grounded = false;  
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "ground")
