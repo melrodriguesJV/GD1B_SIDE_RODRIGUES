@@ -6579,6 +6579,7 @@ GameObject:
   - component: {fileID: 2011566129}
   - component: {fileID: 2011566128}
   - component: {fileID: 2011566133}
+  - component: {fileID: 2011566134}
   m_Layer: 3
   m_Name: character
   m_TagString: Player
@@ -6645,18 +6646,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17246869, y: -0.08869314}
+  m_Offset: {x: -0.112903416, y: -0.08869314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 12.000001, y: 12.001953}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7080288, y: 4.1768303}
+  m_Size: {x: 0.8202058, y: 4.1768303}
   m_EdgeRadius: 0
 --- !u!114 &2011566130
 MonoBehaviour:
@@ -6714,7 +6715,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1525328774, guid: b07f6cea89e82bf48bde5db46c49491b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6761,6 +6762,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2011566134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011566127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b79b051e4aa2c49b7803cf113b0897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2042534693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7779,7 +7792,6 @@ SceneRoots:
   - {fileID: 439655972}
   - {fileID: 3251711469744127398}
   - {fileID: 2292389546168831107}
-  - {fileID: 2011566132}
   - {fileID: 736572252}
   - {fileID: 106546606}
   - {fileID: 389915280}
@@ -7881,3 +7893,4 @@ SceneRoots:
   - {fileID: 793222500}
   - {fileID: 1106087477}
   - {fileID: 418045133}
+  - {fileID: 2011566132}

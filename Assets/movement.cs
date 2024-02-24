@@ -21,8 +21,14 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
         rgbd.velocity = new Vector2(Input.GetAxis("Horizontal")*speed, rgbd.velocity.y);
         gameObject.GetComponent<Animator>().Play("walk");
+        if (horizontalInput > 0.1f)
+            transform.localScale = Vector3.one;
+        else if (horizontalInput < -0.1f)
+            transform.localScale = new Vector3(-1,1,1);
+        
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rgbd.velocity = new Vector2(rgbd.velocity.x, jump_force);
