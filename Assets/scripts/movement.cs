@@ -22,12 +22,17 @@ public class movement : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+        
         rgbd.velocity = new Vector2(Input.GetAxis("Horizontal")*speed, rgbd.velocity.y);
-        gameObject.GetComponent<Animator>().Play("walk");
+       
+        
+        //pour faire un flip
         if (horizontalInput > 0.1f)
             transform.localScale = Vector3.one;
         else if (horizontalInput < -0.1f)
             transform.localScale = new Vector3(-1,1,1);
+
+        GetComponent<Animator>().SetBool("walk", horizontalInput != 0);
         
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
